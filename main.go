@@ -8,11 +8,6 @@ import (
 	"bufio"
 )
 
-const (
-	client1 = "http://localhost:8000"
-	client2 = "http://localhost:9000"
-)
-
 var field Field
 
 func main() {
@@ -30,10 +25,10 @@ func game(n, y, x int) {
 func calcTurn(n int) string {
 	if n % 2 == 0 {
 		fmt.Println("A")
-		return client1
+		return os.Args[1]
 	} else {
 		fmt.Println("B")
-		return client2
+		return os.Args[2]
 	}
 }
 
